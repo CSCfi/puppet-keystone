@@ -235,9 +235,9 @@ class Puppet::Provider::Keystone < Puppet::Provider::Openstack
 
   def self.keystone_request(service, action, error, properties=nil)
     properties ||= []
-    @credentials.username = keystone_puppet_credentials['username']
-    @credentials.password = keystone_puppet_credentials['password']
-    @credentials.project_name = keystone_puppet_credentials['project_name']
+    #@credentials.username = keystone_puppet_credentials['username']
+    @credentials.token = keystone_puppet_credentials['password']
+    #@credentials.project_name = keystone_puppet_credentials['project_name']
     @credentials.auth_url = auth_endpoint
     if keystone_puppet_credentials['region_name']
       @credentials.region_name = keystone_puppet_credentials['region_name']
