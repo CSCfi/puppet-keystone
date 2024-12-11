@@ -755,7 +755,7 @@ will be removed in a later release')
 
   # TODO(tobias-urdin): Remove this when admin_token is removed.
   keystone_config {
-    'DEFAULT/admin_token': ensure => 'absent', secret => true;
+    'DEFAULT/admin_token': value => $admin_token, secret => true;
   }
 
   keystone_config {
